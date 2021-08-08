@@ -21,7 +21,7 @@ export default (state = [], action) => {
         case 'DOWNVOTE_QUOTE':
             let qIndex = state.findIndex(q => q.id === action.quoteId)
             let qwote = {...state[qIndex], votes: state[qIndex].votes - 1}
-            if (qwote.votes > 0) {
+            if (qwote.votes >= 0) {
                 return [
                     ...state.slice(0, qIndex), 
                     qwote, 
