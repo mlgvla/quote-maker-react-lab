@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import uuid from 'uuid';
 import { connect } from 'react-redux';
-import { addQuote,upvoteQuote, downvoteQuote } from '../actions/quotes';
+import { addQuote } from '../actions/quotes';
 
 class QuoteForm extends Component {
 
@@ -83,8 +83,6 @@ class QuoteForm extends Component {
 const mapDispatchToProps = dispatch => {
     return {
         dispatchAddQuote: (quote) => dispatch(addQuote(quote)),
-        dispatchUpvoteQuote: (id) => dispatch(upvoteQuote(id)),
-        dispatchDownvoteQuote: (id) => dispatch(downvoteQuote(id))
     }
 }
 //add arguments to connect as needed
