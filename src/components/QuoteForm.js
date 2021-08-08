@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import uuid from 'uuid';
 import { connect } from 'react-redux';
 import { addQuote } from '../actions/quotes';
+// import QuoteCard from './QuoteCard';
 
 class QuoteForm extends Component {
 
@@ -25,6 +26,7 @@ class QuoteForm extends Component {
           votes: 0
       }
       this.props.dispatchAddQuote(quote)
+
       this.setState({
           content: '',
           author: ''
@@ -85,5 +87,5 @@ const mapDispatchToProps = dispatch => {
         dispatchAddQuote: (quote) => dispatch(addQuote(quote)),
     }
 }
-//add arguments to connect as needed
+// add arguments to connect as needed
 export default connect(null, mapDispatchToProps)(QuoteForm);
